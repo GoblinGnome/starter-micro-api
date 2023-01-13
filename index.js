@@ -1,8 +1,9 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const cron = require("cron");
+require('dotenv').config()
 
-const config = require('./config.json');
+const TOKEN = process.env.TOKEN
 
 let scheduledMessage = new cron.CronJob('01 00 00 * * *', () => {
       // This runs every day at 10:30:00, you can do anything you want
@@ -120,4 +121,4 @@ motivations = ["You can do it!", "Keep your head high, king!","We love you sushi
 "There are plenty fish in the sea","You'll get to gold, just beleive in yourself!","You're worth it, bro.","xQc knows you exist!","Your life is poggers.","You're really good at airsoft!",
 "Hang your anime posters proudly!","You can do it!","You'll make it through!","It's ok to cry","Don't forget to walk your dog.","A gamer girl girl gf is waiting for you."];
 
-client.login(process.env.DISCORD_TOKEN);
+client.login(TOKEN);
